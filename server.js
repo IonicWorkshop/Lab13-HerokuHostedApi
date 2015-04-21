@@ -24,5 +24,5 @@ app.get('/api/endpoint', function(req, res) {
   console.log('Got a request from host:', req.hostname, 'Origin:', req.headers.origin)
 })
 
-app.listen(3000);
-console.log('Listening on port', 3000)
+app.listen(80);
+console.log('Listening on port', 80)
