@@ -15,3 +15,17 @@ Api Output:
     ]
   }
 ```  
+
+##Heroku Setup:**
+
+** Add Heroku Git Remote Info**
+
+1. Install Heroku tool belt
+1. heroku login
+1.heroku git:remote -a ioniccorddemoapi
+
+**Push Updates to heroku**
+    git push heroku master
+
+**Get Any Updates from Heroku**
+     git pull heroku master
