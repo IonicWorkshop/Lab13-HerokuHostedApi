@@ -22,7 +22,7 @@ Api Output:
 
 1. Install Heroku tool belt
 1. heroku login
-1.heroku git:remote -a ioniccorddemoapi
+1.heroku git:remote -a ioniccorsdemoapi
 
 **Push Updates to heroku**
     git push heroku master
