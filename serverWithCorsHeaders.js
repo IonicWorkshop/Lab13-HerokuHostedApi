@@ -27,12 +27,18 @@ var result = {
 };
 
 app.get('/api/endpointNoCors', function(req, res) {
-  res.send(result);
-  console.log('Got a request from host:', req.hostname, 'Origin:', req.headers.origin);
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+    res.send(result);
+  console.log('/endPointNoCors.  Got a request from host:', req.hostname, 'Origin:', req.headers.origin);
 });
 
 app.get('/NoCors', function(request,response) {
-    response.send('Hello World');
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+    response.send('NoCors Hello World');
 });
 
 app.listen(app.get('port'), function() {
