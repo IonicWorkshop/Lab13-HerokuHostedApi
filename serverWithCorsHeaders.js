@@ -1,7 +1,12 @@
 var express = require('express')
 var app = express()
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 4000));
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
 
 var result = {
   "success": "true",
@@ -21,12 +26,12 @@ var result = {
   ]
 };
 
-app.get('/api/endpoint', function(req, res) {
+app.get('/api/endpointNoCors', function(req, res) {
   res.send(result);
   console.log('Got a request from host:', req.hostname, 'Origin:', req.headers.origin);
 });
 
-app.get('/', function(request,response) {
+app.get('/NoCors', function(request,response) {
     response.send('Hello World');
 });
 
